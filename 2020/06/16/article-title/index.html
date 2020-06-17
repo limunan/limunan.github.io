@@ -7,17 +7,17 @@
   
   <title>基于Dokcer配置tensorflow环境 | Limunan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于Dokcer配置tensorflow环境为什么是Docker？软件开发最大的难题是配置环境，不同的程序可能需要不同的配置环境。虚拟机是一种解决方案，用户可以通过不同的虚拟机实现不同的环境配置。但由于虚拟机占用资源高，Linux提供了另一种解决方案，Linux容器。Docker属于Linux容器的一种封装，提供简单易用的容器使用接口。Docker将应用程序与该程序的依赖，打包在一个文件里，运行这">
+  <meta name="description" content="为什么是Docker？软件开发最大的难题是配置环境，不同的程序可能需要不同的配置环境。虚拟机是一种解决方案，用户可以通过不同的虚拟机实现不同的环境配置。但由于虚拟机占用资源高，Linux提供了另一种解决方案，Linux容器。Docker属于Linux容器的一种封装，提供简单易用的容器使用接口。Docker将应用程序与该程序的依赖，打包在一个文件里，运行这个文件，就会生成一个虚拟容器。程序在这个虚拟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Dokcer配置tensorflow环境">
 <meta property="og:url" content="http://yoursite.com/2020/06/16/article-title/index.html">
 <meta property="og:site_name" content="Limunan">
-<meta property="og:description" content="基于Dokcer配置tensorflow环境为什么是Docker？软件开发最大的难题是配置环境，不同的程序可能需要不同的配置环境。虚拟机是一种解决方案，用户可以通过不同的虚拟机实现不同的环境配置。但由于虚拟机占用资源高，Linux提供了另一种解决方案，Linux容器。Docker属于Linux容器的一种封装，提供简单易用的容器使用接口。Docker将应用程序与该程序的依赖，打包在一个文件里，运行这">
+<meta property="og:description" content="为什么是Docker？软件开发最大的难题是配置环境，不同的程序可能需要不同的配置环境。虚拟机是一种解决方案，用户可以通过不同的虚拟机实现不同的环境配置。但由于虚拟机占用资源高，Linux提供了另一种解决方案，Linux容器。Docker属于Linux容器的一种封装，提供简单易用的容器使用接口。Docker将应用程序与该程序的依赖，打包在一个文件里，运行这个文件，就会生成一个虚拟容器。程序在这个虚拟">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/Users/dinghing/Documents/workspace/blog/source/_posts/image/i1.jpg">
 <meta property="og:image" content="http://yoursite.com/Users/dinghing/Documents/workspace/blog/source/_posts/image/i2.jpg">
 <meta property="article:published_time" content="2020-06-16T13:17:02.000Z">
-<meta property="article:modified_time" content="2020-06-17T04:02:10.855Z">
+<meta property="article:modified_time" content="2020-06-17T04:13:18.966Z">
 <meta property="article:author" content="Munan Li">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/Users/dinghing/Documents/workspace/blog/source/_posts/image/i1.jpg">
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基于Dokcer配置tensorflow环境"><a href="#基于Dokcer配置tensorflow环境" class="headerlink" title="基于Dokcer配置tensorflow环境"></a>基于Dokcer配置tensorflow环境</h1><h2 id="为什么是Docker？"><a href="#为什么是Docker？" class="headerlink" title="为什么是Docker？"></a>为什么是Docker？</h2><p>软件开发最大的难题是配置环境，不同的程序可能需要不同的配置环境。虚拟机是一种解决方案，用户可以通过不同的虚拟机实现不同的环境配置。但由于虚拟机占用资源高，Linux提供了另一种解决方案，Linux容器。Docker属于Linux容器的一种封装，提供简单易用的容器使用接口。Docker将应用程序与该程序的依赖，打包在一个文件里，运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就像在真实的物理机上运行一样。</p>
+        <h2 id="为什么是Docker？"><a href="#为什么是Docker？" class="headerlink" title="为什么是Docker？"></a>为什么是Docker？</h2><p>软件开发最大的难题是配置环境，不同的程序可能需要不同的配置环境。虚拟机是一种解决方案，用户可以通过不同的虚拟机实现不同的环境配置。但由于虚拟机占用资源高，Linux提供了另一种解决方案，Linux容器。Docker属于Linux容器的一种封装，提供简单易用的容器使用接口。Docker将应用程序与该程序的依赖，打包在一个文件里，运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就像在真实的物理机上运行一样。</p>
 <h2 id="镜像（Image）-amp-容器（Containner）"><a href="#镜像（Image）-amp-容器（Containner）" class="headerlink" title="镜像（Image）&amp; 容器（Containner）"></a>镜像（Image）&amp; 容器（Containner）</h2><p>Image是一个特殊的文件系统，它提供了容器运行时所需要的程序、库资源、配置等文件，还包含了为运行时准备的一些配置参数。Docker把这些文件打包在image里面，通过这个文件，生成Container，你的程序都在这个Container里运行。</p>
 <h2 id="配置实例"><a href="#配置实例" class="headerlink" title="配置实例"></a>配置实例</h2><h3 id="第一步：Bulid-Image"><a href="#第一步：Bulid-Image" class="headerlink" title="第一步：Bulid Image"></a>第一步：Bulid Image</h3><p>创建镜像有两种方法，可以通过dockerfile创建docker image，也可以直接下载需要的<a href="https://hub.docker.com/r/tensorflow/tensorflow/tags" target="_blank" rel="noopener">tensorflow/tensorflow:latest</a> image版本。</p>
 <p>最快速的方法是直接下载image：</p>
