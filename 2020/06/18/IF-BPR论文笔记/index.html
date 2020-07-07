@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.1">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/06/18/IF-BPR%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/9.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/06/18/IF-BPR%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/10.jpg">
 <meta property="article:published_time" content="2020-06-18T08:56:53.000Z">
-<meta property="article:modified_time" content="2020-06-18T13:36:30.484Z">
+<meta property="article:modified_time" content="2020-06-23T01:07:49.075Z">
 <meta property="article:author" content="Munan Li">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/06/18/IF-BPR%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/1.jpg">
@@ -85,12 +85,12 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-18 17:56:53 / Modified: 22:36:30" itemprop="dateCreated datePublished" datetime="2020-06-18T17:56:53+09:00">2020-06-18</time>
+              <time title="Created: 2020-06-18 17:56:53" itemprop="dateCreated datePublished" datetime="2020-06-18T17:56:53+09:00">2020-06-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-23 10:07:49" itemprop="dateModified" datetime="2020-06-23T10:07:49+09:00">2020-06-23</time>
+              </span>
 
           
 
@@ -265,7 +271,10 @@
     <a href="/2020/06/16/docker_tensorflow%E9%85%8D%E7%BD%AE/" rel="prev" title="基于Dokcer配置tensorflow环境">
       <i class="fa fa-chevron-left"></i> 基于Dokcer配置tensorflow环境
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/30/RSGAN%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" rel="next" title="RSGAN论文笔记">
+      RSGAN论文笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -338,7 +347,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -423,6 +432,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
 
   
 
